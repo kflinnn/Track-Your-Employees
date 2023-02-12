@@ -22,10 +22,56 @@ const db = mysql.createConnection(
     console.log('Connected to the tracker_db database.')
 );
 
-//Query database
+runApp();
 
+//function to initialize application
+function runApp () {
 
-//Query database
+    //inquirer prompts
+inquirer
+    .prompt([
+      { 
+        type: 'list',
+        name: 'starterQuestions',
+        message: "What would you lke to do? (Use arrow keys)",
+        choices: ["View All Employees", "Add Employee", "Update Employee Role", "View All Roles", "Add Role", "View All Departments", "Add Department"] 
+      }
+    ])
+     .then((answer) => {
+        switch (answer.startQuestions) {
+            case "View All Employees":
+                showAllEmployees();
+                break;
+
+            case "Add Employee":
+                addEmployee();
+                break;
+
+            case "Update Employee Role":
+                updateRole();
+                break;
+
+            case "View All Roles":
+                viewRole();
+                break;
+
+            case "Add Role":
+                addRole();
+                break;
+
+            case "View All Departments":
+                viewDepartments();
+
+            case "Add Department":
+                addDepartment();
+                break;
+        }
+     });
+}
+
+function showAllEmployees() {
+    const employeeArray = [];
+}
 
 
 //Default response for any other request (Not Found)
