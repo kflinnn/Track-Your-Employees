@@ -44,9 +44,7 @@ inquirer
 
 //switch function
 function userInput(answer) {
-    console.log(answer.starterQuestion);
     const userChoice = answer.starterQuestion;
-    console.log("I would like to " + userChoice);
         switch (userChoice) {
             case "View All Departments":
                 showAllDepartments();
