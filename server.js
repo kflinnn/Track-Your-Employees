@@ -121,6 +121,7 @@ function addDepartment () {
             function (err) {
                 if (err) throw err;
                 console.log("Department added to database!");
+                promptExit();
             })
     })
 };
